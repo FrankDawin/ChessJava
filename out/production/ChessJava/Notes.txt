@@ -1,0 +1,20 @@
+Project Structure
+
+
+--Overview
+
+It will be a simple chess program without GUI which work only with keyboard input for movement.
+The goal is making a working project with Java.
+
+--Key points
+
+The fen code will be central in the program. Every state will be evaluated in FEN.
+The goal is to build it to be fast and easy for AI production.
+
+--Class
+
+Fen (all regarding the fencode)
+Board (the chess board)
+Piece (all of the piece info, values, movements)
+Opponent (AI)
+ChessGame (main method)
