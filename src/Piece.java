@@ -6,6 +6,7 @@ public class Piece {
     int value_bishop = 3;
     int value_rook = 5;
     int value_queen = 9;
+    int value_king = 50;
 
     String pawn = "p";
     String knight = "n";
@@ -26,14 +27,11 @@ public class Piece {
         for (int i = 0; i < diagonal.length; i++) {
             String coor1 = make_string(x + diagonal[i][0], y + diagonal[i][1]);
             moves.add(coor1);
+        }
 
         for (int a = 0; a < horizontal.length; a++) {
             String coor2 = make_string(x + horizontal[a][0], y + horizontal[a][1]);
             moves.add(coor2);
-
-        }
-
-
         }
         return moves;
     }
@@ -62,12 +60,100 @@ public class Piece {
         return moves;
     }
 
+    // Return the move the bishop can make as arraylist, take in a position of the piece as 2 int
+    public ArrayList<String> move_bishop(int x, int y) {
 
+        ArrayList<String> moves = new ArrayList<String>();
+
+        for (int a = 0; a < diagonal.length; a++) {
+            int count = 0;
+            int i = x;
+            int j = y;
+
+            while (count != 7) {
+                String coor2 = make_string(i + diagonal[a][0], j + diagonal[a][1]);
+                moves.add(coor2);
+                i = i + diagonal[a][0];
+                j = j + diagonal[a][1];
+                count ++;
+
+            }
+
+        }
+
+        return moves;
+    }
+
+    // Return the move the knight can make as arraylist, take in a position of the piece as 2 int
+    public ArrayList<String> move_knight(int x, int y) {
+
+        ArrayList<String> moves = new ArrayList<String>();
+
+        for (int a = 0; a < knight_move.length; a++) {
+
+            String coor2 = make_string(x + knight_move[a][0], y + knight_move[a][1]);
+            moves.add(coor2);
+
+        }
+
+        return moves;
+    }
+
+    // Return the move the queen can make as arraylist, take in a position of the piece as 2 int
+    public ArrayList<String> move_queen(int x, int y) {
+
+        ArrayList<String> moves = new ArrayList<String>();
+
+        for (int a = 0; a < horizontal.length; a++) {
+            int count = 0;
+            int i = x;
+            int j = y;
+
+            while (count != 7) {
+                String coor2 = make_string(i + horizontal[a][0], j + horizontal[a][1]);
+                moves.add(coor2);
+                i = i + horizontal[a][0];
+                j = j + horizontal[a][1];
+                count ++;
+
+            }
+        }
+
+        for (int a = 0; a < diagonal.length; a++) {
+            int count = 0;
+            int i = x;
+            int j = y;
+
+            while (count != 7) {
+                String coor2 = make_string(i + diagonal[a][0], j + diagonal[a][1]);
+                moves.add(coor2);
+                i = i + diagonal[a][0];
+                j = j + diagonal[a][1];
+                count ++;
+
+            }
+        }
+
+        return moves;
+    }
+
+    // Return the move the pawn can make as arraylist, take in a position of the king as 2 int
+    public ArrayList<String> move_pawn(int x, int y) {
+
+        ArrayList<String> moves = new ArrayList<String>();
+
+        for (int a = 0; a < horizontal.length; a++) {
+            String coor2 = make_string(x + horizontal[a][0], y + horizontal[a][1]);
+            moves.add(coor2);
+        }
+        return moves;
+    }
 
     public String make_string(int x, int y) {
         String answer = x + " " + y;
         return answer;
     }
-
 }
+
+
 
