@@ -17,4 +17,8 @@ Fen (all regarding the fencode)
 Board (the chess board)
 Piece (all of the piece info, values, movements)
 Opponent (AI)
-ChessGame (main method)
+Main (main method)
+
+--To build
+
+move rules for each piece

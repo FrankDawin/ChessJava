@@ -1,4 +1,4 @@
-public class ChessGame {
+public class Main {
     public static void main(String[] args) {
         Fen a = new Fen();
         Board b = new Board();

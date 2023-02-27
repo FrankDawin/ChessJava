@@ -45,6 +45,38 @@ public class Fen {
 
     }
 
+    // Take a board and return a fencode as String
+    public String Board_to_fen(String[][] game_board) {
+        int count = 0;
+        String newfencode = "";
+
+        // For each row
+        for (int i = 0; i < 8; i++) {
+            // for each column
+            for (int y = 0; y < 8; y++) {
+                // If you get a piece and the count is more than 1
+                if (game_board[i][y] != "x" && count > 0) {
+                    newfencode += count;
+                    count = 0;
+                }
+
+                // If you get a piece, you add the piece
+                if (game_board[i][y] != "x") {
+                    newfencode += game_board[i][y];
+                    count = 0;
+                } else if (y == 7 && count > 0) { // If you are at the end of the line, and the count is more than 0, you add the number
+                    newfencode += count;
+                    count = 0;
+                } else { // you add another input
+                    count += 1;
+                }
+
+            }
+            newfencode += "/";
+        }
+        return newfencode;
+    }
+
     // Make the fencode given as input the current fencode of the instance
     public void update_fen(String fen_code) {
         String[] splited = fen_code.split(" ");
