@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Game {
-    String active_color = "";
+    String active_color = "w";
     int fullmove = 0;
     int halfmove = 0;
     boolean en_passant = false;
