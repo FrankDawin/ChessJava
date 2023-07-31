@@ -21,4 +21,7 @@ Main (main method)
 
 --To build
 
+overlapping knight move, can move to own piece color square
 move rules for each piece
+GUI for debugging
+Debugging mode

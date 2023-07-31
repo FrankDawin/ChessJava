@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class Fen {
     // Make the fencode with the starting value of a new chess game
-    String starting_fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
-    String[] splited = starting_fen.split(" ");
+    String fencode = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    String[] splited = fencode.split(" ");
     String piece_placement = splited[0];
     String active_color = splited[1];
     String castling_possible = splited[2];

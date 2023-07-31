@@ -1,0 +1,24 @@
+if piece == "r"
+
+How to remember move for pieces?
+
+-do each piece knows?
+-Does the game knows?
+-how it is stored
+
+
+for each square 64 (8x8)
+for each piece
+32 pieces (2x16)
+
+16 pieces
+fen - all move
+square --> identify piece --> list
+
+IA needs movement in advance, game don't
+
+if move(x,y,x,y)
+identify the piece --> make a list of move --> if movement illegal --> block
+
+
+for movement what do you need, all pattern regardless of board. because move strike out of bound

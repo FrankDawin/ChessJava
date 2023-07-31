@@ -168,20 +168,25 @@ public class Piece {
             int i = x;  // reset value of x
             int j = y; // reset value of y
 
+            // assert inbound move (< 0 and > 7)
+            if (i + knight_move[a][0] < 0 || j + knight_move[a][1] < 0 || i + knight_move[a][0] > 7 || j + knight_move[a][1] > 7) {
+                continue;}
+
             // assert same color cannot eat each other
-            if (color_marker == 1 && game_board[i][j] != "x") {
-                if (Character.isUpperCase(game_board[i][j].charAt(0))) {
-                    break;
+            if (color_marker == 1 && game_board[i+knight_move[a][0]][j+knight_move[a][1]] != "x") {
+                if (Character.isUpperCase(game_board[i+knight_move[a][0]][j+knight_move[a][0]].charAt(0))) {
+                    continue;
                 }
-            } else if (color_marker == 0 && game_board[i][j] != "x") {
-                if (Character.isLowerCase(game_board[i][j].charAt(0))) {
-                    break;
+            } else if (color_marker == 0 && game_board[i+knight_move[a][0]][j+knight_move[a][1]] != "x") {
+                if (Character.isLowerCase(game_board[i+knight_move[a][0]][j+knight_move[a][1]].charAt(0))) {
+                    continue;
                 }
             }
 
-            String coor2 = make_string(x + knight_move[a][0], y + knight_move[a][1]);
-            moves.add(coor2);
-
+             else {
+                String coor2 = make_string(x + knight_move[a][0], y + knight_move[a][1]);
+                moves.add(coor2);
+            }
         }
 
         return moves;
