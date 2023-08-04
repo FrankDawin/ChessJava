@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        debug4();
+        debug5();
     }
 
     // Moving one piece
@@ -45,7 +45,11 @@ public class Main {
 
     // show a GUI2
     public static void debug4() {
-        SwingUtilities.invokeLater(() -> new ChessBoardGUI());
+        SwingUtilities.invokeLater(() -> new GUI2());
+    }
+
+    public static void debug5() {
+        SwingUtilities.invokeLater(() -> new GUI3().setVisible(true));
     }
 
 }

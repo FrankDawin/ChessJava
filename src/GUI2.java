@@ -1,14 +1,15 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import javax.imageio.ImageIO;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
-public class ChessBoardGUI extends JFrame {
+public class GUI2 extends JFrame {
     private static final int BOARD_SIZE = 8;
     private JPanel chessBoardPanel;
 
-    public ChessBoardGUI() {
+    public GUI2() {
         setTitle("Chess in Java");
         setSize(600, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,14 +28,22 @@ public class ChessBoardGUI extends JFrame {
                 JPanel squarePanel = new JPanel();
                 if ((row + col) % 2 == 0) {
                     squarePanel.setBackground(Color.WHITE);
-                    squarePanel.drawImage("img/p.png", 0, 0, null);
                 } else {
                     squarePanel.setBackground(Color.BLACK);
                 }
                 chessBoardPanel.add(squarePanel);
             }
         }
-    }
 
     }
+
+}
+
+// ImageIcon icon = new ImageIcon(getClass().getResource("img/p.png"));
+//                JLabel squarePanel = new JLabel(icon);
+
+
+
+
+
 
